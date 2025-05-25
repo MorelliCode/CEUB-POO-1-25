@@ -11,5 +11,5 @@ class Quarto:
         pass
 
     def esta_disponivel():
-        pass
+        return self.__disponivel
     
