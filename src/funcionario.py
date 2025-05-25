@@ -17,4 +17,4 @@ class Funcionario(Pessoa):
         pass
 
     def __str__(self):
-        return "funcionário" + super().__str__()
+        return "funcionário " + super().__str__()
