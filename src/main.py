@@ -10,4 +10,5 @@ for person in range(3):
     new_person = Pessoa(1, "new", "new@gmail.com")
     list_people.append(new_person)
 
-print(list_people)
+for person in list_people:
+    print(person)
