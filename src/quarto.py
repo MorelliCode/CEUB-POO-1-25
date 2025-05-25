@@ -10,6 +10,6 @@ class Quarto:
     def liberar():
         pass
 
-    def esta_disponivel():
+    def esta_disponivel(self):
         return self.__disponivel
     
