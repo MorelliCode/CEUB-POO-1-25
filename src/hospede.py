@@ -13,3 +13,6 @@ class Hospede(Pessoa):
 
     def consultar_reservas():
         pass
+
+    def __str__(self):
+        return "hóspede " + super().__str__()

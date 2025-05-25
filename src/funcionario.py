@@ -15,3 +15,6 @@ class Funcionario(Pessoa):
 
     def cancelar_reserva(hotel, reserva):
         pass
+
+    def __str__(self):
+        return "funcionário" + super().__str__()

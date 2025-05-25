@@ -13,3 +13,5 @@ class Quarto:
     def esta_disponivel(self):
         return self.__disponivel
     
+    def __str__(self):
+        return f"quarto {self.__numero}, {self.__tipo}"
