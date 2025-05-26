@@ -16,3 +16,11 @@ class Hotel:
     def cancelar_reserva(reserva):
         pass
     
+    def get_quartos(self):
+        return self.__quartos
+    
+    def get_hospedes(self):
+        return self.__hospedes
+    
+    def get_reservas(self):
+        return self.__reservas
