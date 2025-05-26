@@ -55,6 +55,7 @@ def hospede_cadastrar():
         email = input("Digite o seu email: ")
         novo_hospede = Hospede(cpf, nome, email)
         waystone.registrar_hospede(novo_hospede)
+        print("Você foi cadastrado com sucesso.")
         break
         
 
