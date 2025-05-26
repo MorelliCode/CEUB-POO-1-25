@@ -46,7 +46,7 @@ def hospede_cadastrar():
         cpf = ""
         nome = ""
         email = ""
-        cpf = input("Digite o seu CPF: ")
+        cpf = int(input("Digite o seu CPF: "))
         for hospede in waystone.get_hospedes():
             if hospede.get_id() == cpf:
                 print("Já existe um hóspede com esse CPF. Favor cadastrar outro CPF.")
