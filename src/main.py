@@ -15,16 +15,15 @@ def start_loop():
         print("Digite 'sair' para fechar o programa.")
         choice = input(">")
         if choice == "1":
-            hospede_loop()
+            hospede_start_loop()
         elif choice == "2":
             funcionario_loop()
         elif choice == "sair":
             exit()
         else:
-            print("Escolha não reconhecida. Favor tentar novamente.")
-            
+            print("Escolha não reconhecida. Favor tentar novamente.")    
 
-def hospede_loop():
+def hospede_start_loop():
     while True:
         print("Você selecionou 'hóspede'.")
         print("Você gostaria de:")
@@ -58,8 +57,27 @@ def hospede_cadastrar():
         print("Você foi cadastrado com sucesso.")
         break
         
+def hospede_login():
+    global current_user
+    while True:
+        escolha = input("Digite o seu número de CPF ou 'voltar': ")
+        if escolha == "voltar":
+            break
+        try:
+            escolha = int(escolha)
+        except:
+            print("Favor digitar apenas os números do seu CPF.")
+            continue
+        for hospede in waystone.get_hospedes():
+            if escolha == hospede.get_id():
+                current_user = hospede
+                print("Hóspede autenticado com sucesso.")
+                hospede_loop()
+                return
+        print("Hóspede não encontrado. Você já fez o cadastro?")
 
 
 waystone = Hotel()
+current_user = object()
 
 start_loop()
