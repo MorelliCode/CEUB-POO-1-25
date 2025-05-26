@@ -108,9 +108,12 @@ def hospede_fazer_reserva():
             print(index, "-", quarto)
     while True:
         print("Qual quarto você gostaria de reservar?")
+
         
 
 waystone = Hotel()
 current_user = object()
+test_room = Quarto()
+
 
 start_loop()
