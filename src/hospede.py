@@ -5,14 +5,18 @@ class Hospede(Pessoa):
         super().__init__(id, nome, email)
         self.__reservas = []
 
-    def fazer_reserva(reserva):
+    def fazer_reserva(self, reserva):
         pass
 
-    def cancelar_reserva(reserva):
+    def cancelar_reserva(self, reserva):
         pass
 
-    def consultar_reservas():
-        pass
+    def consultar_reservas(self):
+        print("Você tem as seguintes reservas:")
+        if not self.__reservas:
+            print("Você não tem reservas no momento.")
+        for index, reserva in enumerate(self.__reservas):
+            print(f"{index} - {reserva}")
 
     def __str__(self):
         return "hóspede " + super().__str__()
