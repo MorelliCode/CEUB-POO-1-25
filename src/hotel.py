@@ -10,8 +10,8 @@ class Hotel:
     def remover_quarto(quarto):
         pass
 
-    def registrar_hospede(hospede):
-        pass
+    def registrar_hospede(self, hospede):
+        self.__hospedes.append(hospede)
 
     def cancelar_reserva(reserva):
         pass
