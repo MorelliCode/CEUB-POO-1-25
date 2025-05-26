@@ -4,10 +4,13 @@ class Quarto:
         self.__tipo = tipo
         self.__disponivel = True
 
-    def reservar():
-        pass
+    def reservar(self):
+        if self.__disponivel == False:
+            print("Este quarto já está reservado.")
+        else:
+            
 
-    def liberar():
+    def liberar(self):
         pass
 
     def esta_disponivel(self):
