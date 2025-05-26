@@ -101,7 +101,13 @@ def hospede_loop():
         else:
             print("Opção não diponível. Tente novamente.")
 
-
+def hospede_fazer_reserva():
+    print("No momento, temos os seguintes quartos disponíveis:")
+    for index, quarto in enumerate(waystone.get_quartos()):
+        if quarto.esta_disponivel():
+            print(index, "-", quarto)
+    while True:
+        print("Qual quarto você gostaria de reservar?")
         
 
 waystone = Hotel()
