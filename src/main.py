@@ -76,6 +76,33 @@ def hospede_login():
                 return
         print("Hóspede não encontrado. Você já fez o cadastro?")
 
+def hospede_loop():
+    print(f"Bem vindo, {current_user.get_nome()}.")
+    while True:
+        opcao = 0
+        print("O que você gostaria de fazer?")
+        print("1 - Fazer nova reserva")
+        print("2 - Cancelar reserva")
+        print("3 - Consultar reservas")
+        print("9 - Voltar")
+        try:
+            opcao = int(input(">"))
+        except:
+            print("Por favor digite o número da sua opção escolhida.")
+            continue
+        if opcao == 9:
+            break
+        elif opcao == 1:
+            hospede_fazer_reserva()
+        elif opcao == 2:
+            hospede_cancelar_reserva()
+        elif opcao == 3:
+            current_user.consultar_reservas()
+        else:
+            print("Opção não diponível. Tente novamente.")
+
+
+        
 
 waystone = Hotel()
 current_user = object()
