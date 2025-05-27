@@ -10,6 +10,7 @@ def implement_test_objects():
     test_funcionario = Funcionario(123, "Maria Brito", "maria@hotel.com")
     test_quarto = Quarto(1, "casal")
     test_reserva = Reserva(test_hospede, test_quarto)
+    test_quarto.reservar()
 
     waystone.add_quarto(test_quarto)
     waystone.add_hospede(test_hospede)
