@@ -119,7 +119,10 @@ def hospede_fazer_reserva():
         if quarto.esta_disponivel():
             print(index, "-", quarto)
     while True:
-        print("Qual quarto você gostaria de reservar?")
+        escolha = int(input("Qual o número do quarto que você gostaria de reservar? "))
+        
+
+
 
         
 
