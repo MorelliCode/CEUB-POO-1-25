@@ -5,6 +5,18 @@ from hotel import Hotel
 from quarto import Quarto
 from reserva import Reserva
 
+def implement_test_objects():
+    test_hospede = Hospede(456, "João Silva", "joao@email.com")
+    test_funcionario = Funcionario(123, "Maria Brito", "maria@hotel.com")
+    test_quarto = Quarto(1, "casal")
+    test_reserva = Reserva(test_hospede, test_quarto)
+
+    waystone.add_quarto(test_quarto)
+    waystone.add_hospede(test_hospede)
+    test_hospede.fazer_reserva(test_reserva)
+    waystone.add_reserva(test_reserva)
+    
+
 def start_loop():
     print("-" * 20)
     print("Bem vindo ao hotel Waystone.")
@@ -113,7 +125,7 @@ def hospede_fazer_reserva():
 
 waystone = Hotel()
 current_user = object()
-test_room = Quarto()
 
 
+implement_test_objects()
 start_loop()
