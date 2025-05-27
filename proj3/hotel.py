@@ -14,6 +14,9 @@ class Hotel():
     def registrar_hospede(self, hospede):
         pass
 
+    def registar_funcionario(self, funcionario):
+        pass
+
     def remover_quarto(self, quarto):
         pass
 
