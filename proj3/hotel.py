@@ -7,10 +7,13 @@ class Hotel():
     def add_quarto(self, quarto):
         pass
 
-    def remover_quarto(self, quarto):
+    def add_reserva(self, reserva):
         pass
 
     def registrar_hospede(self, hospede):
+        pass
+
+    def remover_quarto(self, quarto):
         pass
 
     def cancelar_reserva(self, reserva):
