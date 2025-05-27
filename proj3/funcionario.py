@@ -5,10 +5,10 @@ class Funcionario(Pessoa):
         super().__init__(id, nome, email)
     
     def add_quarto(self, hotel, quarto):
-        pass
+        hotel.add_quarto(quarto)
 
     def remover_quarto(self, hotel, quarto):
-        pass
+        hotel.remover_quarto(quarto)
 
     def registrar_hospede(self, hotel, hospede):
         pass
