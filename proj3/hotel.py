@@ -28,3 +28,6 @@ class Hotel():
 
     def listar_reservas(self):
         pass
+
+    def get_funcionarios(self):
+        return self.__funcionarios
