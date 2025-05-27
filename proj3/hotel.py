@@ -6,16 +6,16 @@ class Hotel():
         self.__funcionarios = []
     
     def add_quarto(self, quarto):
-        pass
+        self.__quartos.append(quarto)
 
     def add_reserva(self, reserva):
-        pass
+        self.__reservas.append(reserva)
 
     def registrar_hospede(self, hospede):
-        pass
+        self.__hospedes.append(hospede)
 
     def registar_funcionario(self, funcionario):
-        pass
+        self.__funcionarios.append(funcionario)
 
     def remover_quarto(self, quarto):
         pass
