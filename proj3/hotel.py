@@ -3,6 +3,7 @@ class Hotel():
         self.__quartos = []
         self.__hospedes = []
         self.__reservas = []
+        self.__funcionarios = []
     
     def add_quarto(self, quarto):
         pass
