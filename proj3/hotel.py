@@ -7,6 +7,7 @@ class Hotel():
     
     def add_quarto(self, quarto):
         self.__quartos.append(quarto)
+        print(f"{quarto} adicionado com sucesso.")
 
     def add_reserva(self, reserva):
         self.__reservas.append(reserva)
@@ -17,14 +18,15 @@ class Hotel():
     def registar_funcionario(self, funcionario):
         self.__funcionarios.append(funcionario)
 
-    def remover_quarto(self, quarto):
-        pass
+    def remover_quarto(self, index_quarto):
+        self.__quartos.pop(index_quarto)
+        print("Quarto removido com sucesso.")
 
     def cancelar_reserva(self, reserva):
         pass
 
-    def listar_quartos(self):
-        pass
+    def get_quartos(self):
+        return self.__quartos
 
     def listar_reservas(self):
         pass
