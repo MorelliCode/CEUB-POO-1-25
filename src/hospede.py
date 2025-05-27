@@ -6,7 +6,13 @@ class Hospede(Pessoa):
         self.__reservas = []
 
     def fazer_reserva(self, reserva):
-        pass
+        for reserva_existente in self.__reservas:
+            if str(reserva) == str(reserva_existente):
+                print("Essa reserva já existe.")
+                return
+        self.__reservas.append(reserva)
+        print("Reserva feita com sucesso.")
+        
 
     def cancelar_reserva(self, reserva):
         pass
