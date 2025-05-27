@@ -23,3 +23,6 @@ class Quarto:
     
     def __str__(self):
         return f"quarto {self.__numero}, {self.__tipo}"
+    
+    def get_numero(self):
+        return self.__numero
