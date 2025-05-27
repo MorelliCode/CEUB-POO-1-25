@@ -1,5 +1,5 @@
 class Quarto():
-    def __init__(self, numero:int, tipo:str, disponivel:bool):
+    def __init__(self, numero:int, tipo:str, disponivel:bool = True):
         self.__numero = numero
         self.__tipo = tipo
         self.__disponivel = disponivel
