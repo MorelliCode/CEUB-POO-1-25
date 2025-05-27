@@ -8,7 +8,8 @@ class Quarto:
         if self.__disponivel == False:
             print("Este quarto já está reservado.")
         else:
-            
+            self.__disponivel = False
+            print(f"Quarto {self.__numero} reservado com sucesso.")
 
     def liberar(self):
         pass
