@@ -18,3 +18,9 @@ class Hotel():
 
     def cancelar_reserva(self, reserva):
         pass
+
+    def listar_quartos(self):
+        pass
+
+    def listar_reservas(self):
+        pass
