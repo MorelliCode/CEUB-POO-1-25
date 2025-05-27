@@ -12,7 +12,11 @@ class Quarto:
             print(f"Quarto {self.__numero} reservado com sucesso.")
 
     def liberar(self):
-        pass
+        if self.__disponivel == True:
+            print("Este quarto já está liberado.")
+        else:
+            self.__disponivel = True
+            print(f"Quarto {self.__numero} liberado com sucesso.")
 
     def esta_disponivel(self):
         return self.__disponivel
