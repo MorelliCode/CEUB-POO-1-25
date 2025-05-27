@@ -4,4 +4,4 @@ class Reserva:
         self.__quarto = quarto
 
     def __str__(self):
-        return f"reserva quarto: {self.__quarto}, hóspede: {self.__hospede}"
+        return f"reserva: {self.__quarto} - {self.__hospede}"
