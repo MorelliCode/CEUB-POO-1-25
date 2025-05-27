@@ -98,7 +98,7 @@ def loop_adicionar_quarto():
             continue
         tipo_quarto = input("Este quarto é de casal ou solteiro? ")
         new_quarto = Quarto(numero_quarto, tipo_quarto)
-        waystone.add_quarto(new_quarto)
+        current_user.add_quarto(waystone, new_quarto)
         break
 
 def loop_remover_quarto():
@@ -113,7 +113,7 @@ def loop_remover_quarto():
         if choice == "voltar":
             break
         try:
-            waystone.remover_quarto(int(choice))
+            current_user.remover_quarto(waystone, int(choice))
         except:
             print(f"Você precisa escolher um número de 0 a {len(waystone.get_quartos()) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
 
