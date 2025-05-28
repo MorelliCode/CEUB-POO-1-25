@@ -189,6 +189,27 @@ def loop_funcionario_cancelar_reserva():
         except:
             print(f"Você precisa escolher um número de 0 a {len(waystone.get_reservas()) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
 
+def loop_hospede_start():
+    pass
+
+def loop_hospede_cadastrar():
+    pass
+
+def loop_hospede_login():
+    pass
+
+def loop_hospede():
+    pass
+
+def loop_fazer_reserva():
+    pass
+
+def loop_hospede_cancelar_reserva():
+    pass
+
+def hospede_consultar_reservas():
+    pass
+
 waystone = Hotel()
 current_user = object()
 
