@@ -322,7 +322,6 @@ def loop_hospede_cancelar_reserva():
         waystone.cancelar_reserva(reservas[choice])
         reservas[choice].get_quarto().liberar()
 
-
 def hospede_consultar_reservas():
     reservas = [reserva for reserva in current_user.consultar_reservas()]
     if not reservas:
