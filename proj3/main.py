@@ -1,4 +1,3 @@
-from pessoa import Pessoa
 from funcionario import Funcionario
 from hospede import Hospede
 from quarto import Quarto
@@ -74,7 +73,6 @@ def loop_funcionario_cadastrar():
         new_funcionario = Funcionario(numero_funcionario, nome, email)
         waystone.registar_funcionario(new_funcionario)
         break
-
 
 def loop_funcionario_login():
     global current_user
