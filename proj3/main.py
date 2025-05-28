@@ -289,6 +289,7 @@ def loop_hospede_fazer_reserva():
         new_reserva = Reserva(current_user, quartos_disponíveis[choice])
         current_user.fazer_reserva(new_reserva)
         waystone.add_reserva(new_reserva)
+        quartos_disponíveis[choice].reservar()
         break
         
 def loop_hospede_cancelar_reserva():
@@ -315,6 +316,7 @@ def loop_hospede_cancelar_reserva():
             print(f"Favor escolher um número entre 0 e {len(reservas)}, ou 'voltar'.")
             continue
         waystone.cancelar_reserva(reservas[choice])
+        reservas[choice].get_quarto().liberar()
 
 
 def hospede_consultar_reservas():
