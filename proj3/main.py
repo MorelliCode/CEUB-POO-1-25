@@ -15,8 +15,8 @@ def initialize_test_objects():
     waystone.registar_funcionario(test_funcionario)
 
 def loop_start():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
         print("-" * 30)
         print("Bem vindo ao Hotel Waystone.")
         print("1 - Hospedes")
