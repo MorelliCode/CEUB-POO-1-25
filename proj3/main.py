@@ -269,7 +269,27 @@ def loop_hospede():
             print("Escolha não reconhecida. Tente novamente.")
 
 def loop_hospede_fazer_reserva():
-    pass
+    while True:
+        quartos_disponíveis = [quarto for quarto in waystone.get_quartos() if quarto.esta_disponivel()]
+        if not quartos_disponíveis:
+            print("Não há quartos disponíveis no momento.")
+            break
+        print("No momento, os seguintes quartos estão disponíveis:")
+        for index, quarto in enumerate(quartos_disponíveis):
+            print(index, "-", quarto)
+        print("Qual quarto você gostaria de reservar (ou digite 'voltar' para voltar)?")
+        choice = input(">")
+        if choice == "voltar":
+            break
+        try:
+            choice = int(choice)
+        except:
+            print(f"Favor escolher um número entre 0 e {len(quartos_disponíveis)}, ou 'voltar'.")
+        new_reserva = Reserva(current_user, quartos_disponíveis[choice])
+        current_user.fazer_reserva(new_reserva)
+        waystone.add_reserva(new_reserva)
+        break
+        
 
 def loop_hospede_cancelar_reserva():
     pass
