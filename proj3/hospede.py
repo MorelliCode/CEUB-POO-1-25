@@ -3,7 +3,7 @@ from pessoa import Pessoa
 class Hospede(Pessoa):
     def __init__(self, id, nome, email):
         super().__init__(id, nome, email)
-        __reservas = []
+        self.__reservas = []
     
     def fazer_reserva(self, reserva):
         pass
