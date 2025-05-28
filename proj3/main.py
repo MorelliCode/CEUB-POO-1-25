@@ -172,6 +172,23 @@ def loop_registrar_hospede():
         current_user.registrar_hospede(waystone, new_hospede)
         break
 
+def loop_funcionario_cancelar_reserva():
+    print("Você escolheu 'Cancelar reserva'.")
+    while True:
+        if not waystone.get_reservas():
+            print("Não existem reservas registradas no momento.")
+            break
+        print("No momento, possuimos as seguintes reservas:")
+        for index, reserva in enumerate(waystone.get_reservas()):
+            print(index, "-", reserva)
+        choice = input("Qual reserva você deseja cancelar (ou escreva 'voltar' para voltar para a tela anterior)?")
+        if choice == "voltar":
+            break
+        try:
+            current_user.cancelar_reserva(waystone, int(choice))
+        except:
+            print(f"Você precisa escolher um número de 0 a {len(waystone.get_reservas()) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
+
 waystone = Hotel()
 current_user = object()
 
