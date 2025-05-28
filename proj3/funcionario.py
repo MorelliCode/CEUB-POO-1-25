@@ -11,8 +11,8 @@ class Funcionario(Pessoa):
         hotel.remover_quarto(quarto)
 
     def registrar_hospede(self, hotel, hospede):
-        pass
+        hotel.registrar_hospede(hospede)
 
     def cancelar_reserva(self, hotel, reserva):
-        pass
+        hotel.cancelar_reserva(reserva)
     
