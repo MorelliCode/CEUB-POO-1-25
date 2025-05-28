@@ -5,10 +5,10 @@ class Quarto():
         self.__disponivel = True
 
     def reservar(self):
-        pass
+        self.__disponivel = False
 
     def liberar(self):
-        pass
+        self.__disponivel = True
 
     def esta_disponivel(self):
         return self.__disponivel
