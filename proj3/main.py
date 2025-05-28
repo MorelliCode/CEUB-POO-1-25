@@ -1,3 +1,4 @@
+import os
 from funcionario import Funcionario
 from hospede import Hospede
 from quarto import Quarto
@@ -15,6 +16,7 @@ def initialize_test_objects():
 
 def loop_start():
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("-" * 20)
         print("Bem vindo ao Hotel Waystone.")
         print("1 - Hospedes")
@@ -31,6 +33,7 @@ def loop_start():
             print("Favor escolher um número entre 1-3.")
 
 def loop_funcionario_start():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         print("Você selecionou 'Funcionário'.")
         print("1 - log in")
@@ -47,6 +50,7 @@ def loop_funcionario_start():
             print("Favor escolher um número entre 1-3.")
 
 def loop_funcionario_cadastrar():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Você escolheu 'cadastrar'.")
     while True:
         ja_cadastrado = False
@@ -75,6 +79,7 @@ def loop_funcionario_cadastrar():
         break
 
 def loop_funcionario_login():
+    os.system('cls' if os.name == 'nt' else 'clear')
     global current_user
     while True:
         print("Favor informar o seu número de funcionário, ou 'voltar' para voltar à tela anterior.")
@@ -90,6 +95,7 @@ def loop_funcionario_login():
         print("Funcionário não encontrado. Você já fez o cadastro?")
         
 def loop_funcionario():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Bem vindo, {current_user.get_nome()}.")
     print("O que você gostaria de fazer?")
     while True:
@@ -113,6 +119,7 @@ def loop_funcionario():
             print("Escolha não reconhecida. Tente novamente.")
 
 def loop_adicionar_quarto():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         numero_quarto = int(input("Favor digitar o número do quarto: "))
         ja_cadastrado = False
@@ -129,6 +136,7 @@ def loop_adicionar_quarto():
         break
 
 def loop_remover_quarto():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         if not waystone.get_quartos():
             print("Não existem quartos registrados.")
@@ -145,6 +153,7 @@ def loop_remover_quarto():
             print(f"Você precisa escolher um número de 0 a {len(waystone.get_quartos()) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
 
 def loop_registrar_hospede():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Você escolheu 'Registrar hóspede'.")
     while True:
         ja_cadastrado = False
@@ -173,6 +182,7 @@ def loop_registrar_hospede():
         break
 
 def loop_funcionario_cancelar_reserva():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Você escolheu 'Cancelar reserva'.")
     while True:
         reservas = [reserva for reserva in waystone.get_reservas()]
@@ -194,6 +204,7 @@ def loop_funcionario_cancelar_reserva():
         current_user.cancelar_reserva(waystone, reservas[int(choice)])
 
 def loop_hospede_start():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         print("Você selecionou 'Hóspede'.")
         print("1 - log in")
@@ -210,6 +221,7 @@ def loop_hospede_start():
             print("Favor escolher um número entre 1-3.")
 
 def loop_hospede_cadastrar():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Você escolheu 'Cadastrar'.")
     while True:
         ja_cadastrado = False
@@ -238,6 +250,7 @@ def loop_hospede_cadastrar():
         break
 
 def loop_hospede_login():
+    os.system('cls' if os.name == 'nt' else 'clear')
     global current_user
     while True:
         print("Favor informar o seu número de CPF, ou 'voltar' para voltar à tela anterior.")
@@ -253,6 +266,7 @@ def loop_hospede_login():
         print("Hóspede não encontrado. Você já fez o cadastro?")
 
 def loop_hospede():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Bem vindo, {current_user.get_nome()}.")
     print("O que você gostaria de fazer?")
     while True:
@@ -273,6 +287,7 @@ def loop_hospede():
             print("Escolha não reconhecida. Tente novamente.")
 
 def loop_hospede_fazer_reserva():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         quartos_disponíveis = [quarto for quarto in waystone.get_quartos() if quarto.esta_disponivel()]
         if not quartos_disponíveis:
@@ -301,6 +316,7 @@ def loop_hospede_fazer_reserva():
         break
         
 def loop_hospede_cancelar_reserva():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         reservas = [reserva for reserva in current_user.consultar_reservas()]
         if not reservas:
@@ -327,6 +343,7 @@ def loop_hospede_cancelar_reserva():
         reservas[choice].get_quarto().liberar()
 
 def hospede_consultar_reservas():
+    os.system('cls' if os.name == 'nt' else 'clear')
     reservas = [reserva for reserva in current_user.consultar_reservas()]
     if not reservas:
         print("Não há reservas no seu nome.")
