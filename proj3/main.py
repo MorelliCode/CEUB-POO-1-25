@@ -318,7 +318,13 @@ def loop_hospede_cancelar_reserva():
 
 
 def hospede_consultar_reservas():
-    pass
+    reservas = [reserva for reserva in current_user.consultar_reservas()]
+    if not reservas:
+        print("Não há reservas no seu nome.")
+        return
+    print("No momento, você tem as seguintes reservas:")
+    for index, reserva in enumerate(reservas):
+        print(index, "-", reserva)
 
 waystone = Hotel()
 current_user = object()
