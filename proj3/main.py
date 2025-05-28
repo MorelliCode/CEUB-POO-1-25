@@ -234,12 +234,41 @@ def loop_hospede_cadastrar():
         break
 
 def loop_hospede_login():
-    pass
+    global current_user
+    while True:
+        print("Favor informar o seu número de CPF, ou 'voltar' para voltar à tela anterior.")
+        choice = input(">")
+        if choice == "voltar":
+            break
+        for hospede in waystone.get_hospedes():
+            if choice == str(hospede.get_id()):
+                current_user = hospede
+                print("Funcionário autenticado com sucesso.")
+                loop_hospede()
+                return
+        print("Hóspede não encontrado. Você já fez o cadastro?")
 
 def loop_hospede():
-    pass
+    print(f"Bem vindo, {current_user.get_nome()}.")
+    print("O que você gostaria de fazer?")
+    while True:
+        print("1 - Fazer reserva")
+        print("2 - Cancelar reserva")
+        print("3 - Consultar reservas")
+        print("9 - Voltar")
+        choice = input(">")
+        if choice == "9":
+            break
+        elif choice == "1":
+            loop_hospede_fazer_reserva()
+        elif choice == "2":
+            loop_hospede_cancelar_reserva()
+        elif choice == "3":
+            hospede_consultar_reservas()
+        else:
+            print("Escolha não reconhecida. Tente novamente.")
 
-def loop_fazer_reserva():
+def loop_hospede_fazer_reserva():
     pass
 
 def loop_hospede_cancelar_reserva():
