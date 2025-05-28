@@ -17,6 +17,7 @@ class Hotel():
 
     def registar_funcionario(self, funcionario):
         self.__funcionarios.append(funcionario)
+        print("Funcionario cadastrado com sucesso.")
 
     def remover_quarto(self, index_quarto):
         self.__quartos.pop(index_quarto)
