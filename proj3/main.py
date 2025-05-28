@@ -290,9 +290,31 @@ def loop_hospede_fazer_reserva():
         waystone.add_reserva(new_reserva)
         break
         
-
 def loop_hospede_cancelar_reserva():
-    pass
+    while True:
+        reservas = [reserva for reserva in current_user.consultar_reservas()]
+        if not reservas:
+            print("Não há reservas no seu nome.")
+            break
+        print("No momento, você tem as seguintes reservas:")
+        for index, reserva in enumerate(reservas):
+            print(index, "-", reserva)
+        print("Qual reserva você gostaria de cancelar (ou digite 'voltar' para voltar)?")
+        choice = input(">")
+        if choice == "voltar":
+            break
+        try:
+            choice = int(choice)
+        except:
+            print(f"Favor escolher um número entre 0 e {len(reservas)}, ou 'voltar'.")
+            continue
+        try:
+            current_user.cancelar_reserva(reservas[choice])
+        except:
+            print(f"Favor escolher um número entre 0 e {len(reservas)}, ou 'voltar'.")
+            continue
+        waystone.cancelar_reserva(reservas[choice])
+
 
 def hospede_consultar_reservas():
     pass
