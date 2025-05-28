@@ -144,6 +144,34 @@ def loop_remover_quarto():
         except:
             print(f"Você precisa escolher um número de 0 a {len(waystone.get_quartos()) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
 
+def loop_registrar_hospede():
+    print("Você escolheu 'Registrar hóspede'.")
+    while True:
+        ja_cadastrado = False
+        print("Digite o CPF do hóspede, ou 'voltar' para voltar.")
+        cpf = input(">")
+        if cpf == "voltar":
+            break
+        try:
+            cpf = int(cpf)
+        except:
+            print("Favor digitar o número de CPF ou 'voltar'.")
+            continue
+        for hospede in waystone.get_hospedes():
+            if cpf == hospede.get_id():
+                print("Hospede já cadastrado")
+                ja_cadastrado = True
+                break
+        if ja_cadastrado == True:
+            continue
+        print("Digite o nome completo do hóspede.")
+        nome = input(">")
+        print("Digite o email do hóspede.")
+        email = input(">")
+        new_hospede = Hospede(cpf, nome, email)
+        current_user.registrar_hospede(waystone, new_hospede)
+        break
+
 waystone = Hotel()
 current_user = object()
 
