@@ -12,3 +12,6 @@ class Pessoa():
     
     def get_email(self):
         return self.__email
+    
+    def __str__(self):
+        return f"{self.__nome} - {self.__id} - {self.__email}"
