@@ -25,8 +25,8 @@ class Hotel():
         self.__quartos.pop(index_quarto)
         print("Quarto removido com sucesso.")
 
-    def cancelar_reserva(self, index_reserva):
-        self.__reservas.pop(index_reserva)
+    def cancelar_reserva(self, reserva):
+        self.__reservas.remove(reserva)
         print("Reserva cancelada com sucesso.")
 
     def get_quartos(self):
