@@ -121,8 +121,16 @@ def loop_funcionario():
 def loop_adicionar_quarto():
     os.system('cls' if os.name == 'nt' else 'clear')
     while True:
-        numero_quarto = int(input("Favor digitar o número do quarto: "))
         ja_cadastrado = False
+        print("Favor digitar o número do quarto (ou 'voltar'):")
+        numero_quarto = input(">")
+        if numero_quarto == "voltar":
+            break
+        try:
+            numero_quarto = int(numero_quarto)
+        except:
+            print("Favor digitar apenas números ou 'voltar'.")
+            continue
         for quarto in waystone.get_quartos():
             if numero_quarto == quarto.get_numero():
                 print("Este quarto já está cadastrado.")
