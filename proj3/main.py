@@ -106,7 +106,7 @@ def loop_funcionario():
         elif choice == "2":
             loop_remover_quarto()
         elif choice == "3":
-            loop_hospede_registrar()
+            loop_registrar_hospede()
         elif choice == "4":
             loop_funcionario_cancelar_reserva()
         else:
