@@ -5,6 +5,9 @@ class Reserva():
 
     def get_quarto(self):
         return self.__quarto
+    
+    def get_hospede(self):
+        return self.__hospede
 
     def __str__(self):
         return f"Reserva do {self.__quarto} por {self.__hospede}"
