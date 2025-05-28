@@ -285,6 +285,7 @@ def loop_hospede_fazer_reserva():
             choice = int(choice)
         except:
             print(f"Favor escolher um número entre 0 e {len(quartos_disponíveis)}, ou 'voltar'.")
+            continue
         new_reserva = Reserva(current_user, quartos_disponíveis[choice])
         current_user.fazer_reserva(new_reserva)
         waystone.add_reserva(new_reserva)
