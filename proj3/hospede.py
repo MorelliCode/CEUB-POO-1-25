@@ -6,12 +6,12 @@ class Hospede(Pessoa):
         self.__reservas = []
     
     def fazer_reserva(self, reserva):
-        pass
+        self.__reservas.append(reserva)
 
     def cancelar_reserva(self, reserva):
-        pass
+        self.__reservas.remove(reserva)
 
     def consultar_reservas(self):
-        pass
+        return self.__reservas
 
     
