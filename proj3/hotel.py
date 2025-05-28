@@ -37,3 +37,6 @@ class Hotel():
 
     def get_funcionarios(self):
         return self.__funcionarios
+    
+    def get_hospedes(self):
+        return self.__hospedes
