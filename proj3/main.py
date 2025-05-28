@@ -47,6 +47,35 @@ def loop_funcionario_start():
         else:
             print("Favor escolher um número entre 1-3.")
 
+def loop_funcionario_cadastrar():
+    print("Você escolheu 'cadastrar'.")
+    while True:
+        ja_cadastrado = False
+        print("Digite o seu número de funcionario, ou 'voltar' para voltar à tela anterior.")
+        numero_funcionario = input(">")
+        if numero_funcionario == "voltar":
+            break
+        try:
+            numero_funcionario = int(numero_funcionario)
+        except:
+            print("Favor digitar o seu número de funcionario, ou 'voltar'.")
+            continue
+        for funcionario in waystone.get_funcionarios():
+            if numero_funcionario == funcionario.get_id():
+                print("Funcionario já cadastrado.")
+                ja_cadastrado = True
+                break
+        if ja_cadastrado:
+            continue
+        print("Digite o seu nome completo:")
+        nome = input(">")
+        print("Digite o seu email corporativo:")
+        email = input(">")
+        new_funcionario = Funcionario(numero_funcionario, nome, email)
+        waystone.registar_funcionario(new_funcionario)
+        break
+
+
 def loop_funcionario_login():
     global current_user
     while True:
