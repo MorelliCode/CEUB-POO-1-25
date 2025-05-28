@@ -17,7 +17,7 @@ def initialize_test_objects():
 def loop_start():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("-" * 20)
+        print("-" * 30)
         print("Bem vindo ao Hotel Waystone.")
         print("1 - Hospedes")
         print("2 - Funcionários")
