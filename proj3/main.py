@@ -20,7 +20,7 @@ def loop_start():
     while True:
         print("-" * 30)
         print("Bem vindo ao Hotel Waystone.")
-        print("1 - Hospedes")
+        print("1 - Hóspedes")
         print("2 - Funcionários")
         print("3 - Sair")
     
@@ -40,9 +40,9 @@ def loop_funcionario_start():
     
     while True:
         print("Você selecionou 'Funcionário'.")
-        print("1 - log in")
-        print("2 - cadastrar")
-        print("3 - voltar")
+        print("1 - Log in")
+        print("2 - Cadastrar")
+        print("3 - Voltar")
     
         choice = input(">")
     
@@ -58,7 +58,7 @@ def loop_funcionario_start():
 def loop_funcionario_cadastrar():
     os.system('cls' if os.name == 'nt' else 'clear')
     
-    print("Você escolheu 'cadastrar'.")
+    print("Você escolheu 'Cadastrar'.")
     
     while True:
         ja_cadastrado = False
@@ -186,7 +186,7 @@ def loop_remover_quarto():
             print("Não existem quartos registrados.")
             break
     
-        print("No momento, possuimos os seguintes quartos:")
+        print("No momento, possuímos os seguintes quartos:")
     
         for index, quarto in enumerate(waystone.get_quartos()):
             print(index, "-", quarto)
@@ -198,7 +198,7 @@ def loop_remover_quarto():
         try:
             current_user.remover_quarto(waystone, int(choice))
         except:
-            print(f"Você precisa escolher um número de 0 a {len(waystone.get_quartos()) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
+            print(f"Você precisa escolher um número de 0 a {len(waystone.get_quartos()) - 1}. Ou escreva 'voltar' para voltar à tela anterior")
 
 def loop_registrar_hospede():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -222,7 +222,7 @@ def loop_registrar_hospede():
     
         for hospede in waystone.get_hospedes():
             if cpf == hospede.get_id():
-                print("Hospede já cadastrado")
+                print("Hóspede já cadastrado")
                 ja_cadastrado = True
                 break
     
@@ -253,7 +253,7 @@ def loop_funcionario_cancelar_reserva():
             print("Não existem reservas registradas no momento.")
             break
     
-        print("No momento, possuimos as seguintes reservas:")
+        print("No momento, possuímos as seguintes reservas:")
     
         for index, reserva in enumerate(reservas):
             print(index, "-", reserva)
@@ -277,9 +277,9 @@ def loop_hospede_start():
     
     while True:
         print("Você selecionou 'Hóspede'.")
-        print("1 - log in")
-        print("2 - cadastrar")
-        print("3 - voltar")
+        print("1 - Log in")
+        print("2 - Cadastrar")
+        print("3 - Voltar")
     
         choice = input(">")
     
@@ -349,7 +349,7 @@ def loop_hospede_login():
         for hospede in waystone.get_hospedes():
             if choice == str(hospede.get_id()):
                 current_user = hospede
-                print("Funcionário autenticado com sucesso.")
+                print("Hóspede autenticado com sucesso.")
                 loop_hospede()
                 return
     
