@@ -112,14 +112,13 @@ def loop_funcionario_login():
         for funcionario in waystone.get_funcionarios():
             if choice == str(funcionario.get_id()):
                 current_user = funcionario
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print("Funcionário autenticado com sucesso.")
                 loop_funcionario()
                 return
         print("Funcionário não encontrado. Você já fez o cadastro?")
         
 def loop_funcionario():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
     print(f"Bem vindo, {current_user.get_nome()}.")
     print("O que você gostaria de fazer?")
     
@@ -349,6 +348,7 @@ def loop_hospede_login():
         for hospede in waystone.get_hospedes():
             if choice == str(hospede.get_id()):
                 current_user = hospede
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print("Hóspede autenticado com sucesso.")
                 loop_hospede()
                 return
@@ -356,8 +356,6 @@ def loop_hospede_login():
         print("Hóspede não encontrado. Você já fez o cadastro?")
 
 def loop_hospede():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
     print(f"Bem vindo, {current_user.get_nome()}.")
     print("O que você gostaria de fazer?")
     
