@@ -268,6 +268,7 @@ def loop_funcionario_cancelar_reserva():
             reservas[int(choice)].get_hospede().cancelar_reserva(reservas[int(choice)])
         except:
             print(f"Você precisa escolher um número de 0 a {len(reservas) - 1}. Ou escreva 'voltar' para voltar a tela anterior")
+            continue
     
         current_user.cancelar_reserva(waystone, reservas[int(choice)])
 
