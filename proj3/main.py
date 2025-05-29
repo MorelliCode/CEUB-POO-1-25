@@ -446,7 +446,7 @@ def loop_hospede_cancelar_reserva():
         try:
             current_user.cancelar_reserva(reservas[choice])
         except:
-            print(f"Favor escolher um número entre 0 e {len(reservas)}, ou 'voltar'.")
+            print(f"Favor escolher um número entre 0 e {len(reservas) - 1}, ou 'voltar'.")
             continue
     
         waystone.cancelar_reserva(reservas[choice])
