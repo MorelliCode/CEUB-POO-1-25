@@ -18,7 +18,7 @@ def loop_start():
     os.system('cls' if os.name == 'nt' else 'clear')
     
     while True:
-        print("-" * 30)
+        print(divider)
         print("Bem vindo ao Hotel Waystone.")
         print("1 - Hóspedes")
         print("2 - Funcionários")
@@ -181,15 +181,20 @@ def loop_remover_quarto():
     os.system('cls' if os.name == 'nt' else 'clear')
     
     while True:
+        print(divider)
+
         if not waystone.get_quartos():
             print("Não existem quartos registrados.")
+            print(divider)
             break
     
         print("No momento, possuímos os seguintes quartos:")
     
         for index, quarto in enumerate(waystone.get_quartos()):
             print(index, "-", quarto)
-    
+
+        print(divider)
+
         choice = input("Qual quarto você deseja remover (ou escreva 'voltar' para voltar a tela anterior)? ")
     
         if choice == "voltar":
@@ -246,17 +251,21 @@ def loop_funcionario_cancelar_reserva():
     print("Você escolheu 'Cancelar reserva'.")
     
     while True:
+        print(divider)
+
         reservas = [reserva for reserva in waystone.get_reservas()]
     
         if not reservas:
             print("Não existem reservas registradas no momento.")
+            print(divider)
             break
     
         print("No momento, possuímos as seguintes reservas:")
     
         for index, reserva in enumerate(reservas):
             print(index, "-", reserva)
-    
+
+        print(divider)
         print("Qual reserva você deseja cancelar (ou escreva 'voltar' para voltar para a tela anterior)?")
     
         choice = input(">")
@@ -383,9 +392,12 @@ def loop_hospede_fazer_reserva():
     os.system('cls' if os.name == 'nt' else 'clear')
     
     while True:
+        print(divider)
+
         quartos_disponíveis = [quarto for quarto in waystone.get_quartos() if quarto.esta_disponivel()]
         if not quartos_disponíveis:
             print("Não há quartos disponíveis no momento.")
+            print(divider)
             break
     
         print("No momento, os seguintes quartos estão disponíveis:")
@@ -393,6 +405,7 @@ def loop_hospede_fazer_reserva():
         for index, quarto in enumerate(quartos_disponíveis):
             print(index, "-", quarto)
     
+        print(divider)
         print("Qual quarto você gostaria de reservar (ou digite 'voltar' para voltar)?")
     
         choice = input(">")
@@ -420,10 +433,13 @@ def loop_hospede_cancelar_reserva():
     os.system('cls' if os.name == 'nt' else 'clear')
     
     while True:
+        print(divider)
+
         reservas = [reserva for reserva in current_user.consultar_reservas()]
     
         if not reservas:
             print("Não há reservas no seu nome.")
+            print(divider)
             break
     
         print("No momento, você tem as seguintes reservas:")
@@ -431,6 +447,7 @@ def loop_hospede_cancelar_reserva():
         for index, reserva in enumerate(reservas):
             print(index, "-", reserva)
     
+        print(divider)
         print("Qual reserva você gostaria de cancelar (ou digite 'voltar' para voltar)?")
     
         choice = input(">")
@@ -457,8 +474,11 @@ def hospede_consultar_reservas():
     
     reservas = [reserva for reserva in current_user.consultar_reservas()]
     
+    print(divider)
+
     if not reservas:
         print("Não há reservas no seu nome.")
+        print(divider)
         return
     
     print("No momento, você tem as seguintes reservas:")
@@ -466,6 +486,9 @@ def hospede_consultar_reservas():
     for index, reserva in enumerate(reservas):
         print(index, "-", reserva)
 
+    print(divider)
+
+divider = "-" * 30
 waystone = Hotel()
 current_user = object()
 
