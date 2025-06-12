@@ -8,11 +8,19 @@ from hotel import Hotel
 def initialize_test_objects():
     test_funcionario = Funcionario(123, "Maria", "maria@email.com")
     test_hospede = Hospede(456, "João", "joao@email.com")
-    test_quarto = Quarto(1, "casal")
+    test_quarto_1 = Quarto(1, "casal")
+    test_quarto_2 = Quarto(2, "solteiro")
 
-    waystone.add_quarto(test_quarto)
+    waystone.add_quarto(test_quarto_1)
+    waystone.add_quarto(test_quarto_2)
     waystone.registrar_hospede(test_hospede)
     waystone.registar_funcionario(test_funcionario)
+    
+    test_reserva = Reserva(test_hospede, test_quarto_1)
+
+    test_hospede.fazer_reserva(test_reserva)
+    waystone.add_reserva(test_reserva)
+    test_quarto_1.reservar()
 
 def loop_start():
     os.system('cls' if os.name == 'nt' else 'clear')
